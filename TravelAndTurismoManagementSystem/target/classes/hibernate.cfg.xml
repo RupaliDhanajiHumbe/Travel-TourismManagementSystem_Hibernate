@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/travel_turismo</property>
+        <property name="hibernate.connection.username">Rupali</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.User"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.Booking"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.TourPackage"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.TourDate"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.Hotel"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.Transportation"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.Payment"/>
+        <mapping class = "com.anudip.TravelAndTurismoManagementSystem.Room"/>
+    </session-factory>
+</hibernate-configuration>
