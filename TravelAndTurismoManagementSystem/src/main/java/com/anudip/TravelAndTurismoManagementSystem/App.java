@@ -21,7 +21,6 @@ public class App
     	Session session=sFactory.openSession();
     	Transaction t1=session.beginTransaction();
     	
-    	//System.out.println("Enter the booking List:-");
     	List<Booking> booking=new ArrayList<>();
     	Booking b1=new Booking();
     	b1.setId(111);
@@ -38,8 +37,7 @@ public class App
     	u1.setPhoneNumber("8625011755");
     	u1.setAddress("Pune");
     	u1.setBookings(booking);
-    	
-    	
+   
     	List<Room> rooms=new ArrayList<>();
     	Room r1=new Room();
     	r1.setId(111);
@@ -60,10 +58,10 @@ public class App
     	List<TourDate> tourdate=new ArrayList<>();
     	TourDate td=new TourDate();
     	td.setId(111);
-    	td.setTourDate("1/1/2025");
+    	td.setTourDate("21/10/2024");
     	td.setAvailableSeats(5);
     	td.setBookings(booking);
-    	
+
     	TourPackage  tp=new TourPackage();
     	tp.setId(111);
     	tp.setPackageName("GOLD package");
@@ -75,22 +73,22 @@ public class App
     	tp.setBookings(booking);
     	tp.setTourDates(tourdate);
 		
-         List<Payment> payment=new ArrayList<>();
-	 Payment p=new Payment();
-	 p.setId(111);
+		 List<Payment> payment=new ArrayList<>();
+		 Payment p=new Payment();
+		 p.setId(111);
          p.setAmount(50000); 
          p.setPaymentMethod("Online");
-	 p.setPaymentDate("7/7/2024"); 
+		 p.setPaymentDate("23/10/2024"); 
          p.setBooking(b1);
          session.persist(p);
-	    
-	Transportation tr=new Transportation();
-        tr.setId(111);
-        tr.setPrice(50000);
-        tr.setFromLocation("Pandharpur");
-        tr.setToLocation("Mahabaleshwar");
-        tr.setTransportationType("Bus");
-        session.save(tr);   
+         
+         Transportation tr=new Transportation();
+         tr.setId(111);
+         tr.setPrice(50000);
+         tr.setFromLocation("Pandharpur");
+         tr.setToLocation("Mahabaleshwar");
+         tr.setTransportationType("Bus");
+         session.save(tr);
 		 
     	b1.setUser(u1);
     	booking.add(b1);
@@ -121,7 +119,7 @@ public class App
         tourdate.add(td);
         tp.setTourDates(tourdate);
         session.persist(tp);
-         
+        
         t1.commit();
     	
     }
