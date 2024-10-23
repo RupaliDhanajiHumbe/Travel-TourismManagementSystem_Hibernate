@@ -35,6 +35,12 @@ public class Room {
 		this.price = price;
 	}
 	
+	public Hotel getHotel() {
+		return hotel;
+	}
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
 	public Room() {
 		super();
 		// TODO Auto-generated constructor stub

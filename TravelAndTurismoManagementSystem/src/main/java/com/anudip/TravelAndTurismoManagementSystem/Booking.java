@@ -1,5 +1,7 @@
 package com.anudip.TravelAndTurismoManagementSystem;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,7 +27,7 @@ public class Booking {
 	    private TourDate tourDate; // Many-to-One relationship with TourDate
 	    
 	    @OneToMany(cascade=CascadeType.ALL,mappedBy="booking")                           
-	    private Payment payment; // One-to-One relationship with Payment
+	    private List<Payment> payment; // One-to-One relationship with Payment
 	    
 		public int getId() {
 			return id;
@@ -71,10 +73,10 @@ public class Booking {
 			this.bookingStatus = bookingStatus;
 		}
 		
-		public Payment getPayment() {
+		public List<Payment> getPayment() {
 			return payment;
 		}
-		public void setPayment(Payment payment) {
+		public void setPayment(List<Payment> payment) {
 			this.payment = payment;
 		}
 		public Booking() {

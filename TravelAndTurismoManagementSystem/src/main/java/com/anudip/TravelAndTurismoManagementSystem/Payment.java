@@ -14,7 +14,7 @@ public class Payment {
 	private int id;
     private double amount;
     private String paymentMethod;
-    //private Date paymentDate;
+    private String paymentDate;
     
     @ManyToOne(cascade=CascadeType.ALL)
     private Booking booking;     // Many-to-One relationship with User
@@ -44,6 +44,12 @@ public class Payment {
 		this.paymentMethod = paymentMethod;
 	}
     
+	public String getPaymentDate() {
+		return paymentDate;
+	}
+	public void setPaymentDate(String paymentDate) {
+		this.paymentDate = paymentDate;
+	}
 	public Payment() {
 		super();
 		// TODO Auto-generated constructor stub
